@@ -28,7 +28,36 @@ $(window).resize(function(){
         menu.removeAttr('style');
     }
 });
+
 </script>
+
+<script>
+$(function () {
+
+
+<!-- Funci�n para obtener el Alto(Height) --> 
+function obtenerAlto( obj, alto ) {
+  $( "#alvent" ).text( "El alto de la " + obj + " es " + alto + "px. (Height)" );
+  $(".content").css({'background':'red'});
+  $(".content").css({'height':'alto'});
+}
+obtenerAlto( "ventana", $( window ).height() );
+    
+$(window).resize(function(){
+
+
+          obtenerAlto( "ventana", $( window ).height() );
+     
+});
+     
+
+ 
+
+
+});
+</script>
+
+
 </head>
 <body>
 
@@ -47,11 +76,15 @@ $(window).resize(function(){
 <div  id="info">
  @yield('contenido')
 
-
+<div class="txtcls" id="alvent">&nbsp;</div>
 </div>
+  </div>
 
+ <!--<footer>
+<img class="logoin" src="{{asset ('img/logoinf.png')}}"/>
+</footer>-->
 
-    <footer>
+   <footer>
         <div id="footerinf">
     <p>Proyecto nacido en LABICxLaPaz, Pasto Colombia 2018 </p>
 </div>
