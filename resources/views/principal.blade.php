@@ -3,6 +3,7 @@
     <html>
     <head>
         <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="{{asset ('img/logoinf.png')}}"  sizes="any">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>La Ventana</title>
         <link rel="stylesheet" href="{{asset('css/style.css') }}" />
@@ -35,18 +36,20 @@ $(window).resize(function(){
 $(function () {
 
 
-<!-- Funci�n para obtener el Alto(Height) --> 
 function obtenerAlto( obj, alto ) {
-  $( "#alvent" ).text( "El alto de la " + obj + " es " + alto + "px. (Height)" );
-  $(".content").css({'background':'red'});
-  $(".content").css({'height':'alto'});
-}
-obtenerAlto( "ventana", $( window ).height() );
+    if (alto<900){
+            document.getElementById("info").style.height=alto+"px";
+            document.getElementById("content").style.paddingTop="99px";
+    }
     
+    alto = alto-180;
+ document.getElementById("info").style.height=alto+"px";
+}
+
+
+obtenerAlto( "ventana", $( document).height() );    
 $(window).resize(function(){
-
-
-          obtenerAlto( "ventana", $( window ).height() );
+obtenerAlto( "ventana", $( document ).height() );
      
 });
      
@@ -72,24 +75,27 @@ $(window).resize(function(){
     </ul>
     <a id="pull" href="#">LaVentana</a>
 </nav>
-<div class="content" >
+<div id="content" >
 <div  id="info">
  @yield('contenido')
 
-<div class="txtcls" id="alvent">&nbsp;</div>
+ 
 </div>
+
+<footer>
+        <div id="footerinf">
+    <p>Proyecto nacido en LABICxLaPaz, Pasto Colombia 2018 </p>
+</div>
+    <img class="logoin" src="{{asset ('img/logoinf.png')}}"/>
+ </footer>
+
   </div>
 
  <!--<footer>
 <img class="logoin" src="{{asset ('img/logoinf.png')}}"/>
 </footer>-->
 
-   <footer>
-        <div id="footerinf">
-    <p>Proyecto nacido en LABICxLaPaz, Pasto Colombia 2018 </p>
-</div>
-    <img class="logoin" src="{{asset ('img/logoinf.png')}}"/>
- </footer>
+   
 
 
 </body>
