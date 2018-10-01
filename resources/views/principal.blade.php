@@ -34,16 +34,19 @@ $(window).resize(function(){
 
 <script>
 $(function () {
-
-
 function obtenerAlto( obj, alto ) {
     if (alto<900){
+   
+            document.getElementByClassName("slider").style.height=alto+"px";
             document.getElementById("info").style.height=alto+"px";
+            document.getElementById("content").style.height=alto+"px";
             document.getElementById("content").style.paddingTop="99px";
     }
     
     alto = alto-180;
  document.getElementById("info").style.height=alto+"px";
+ document.getElementById("content").style.height=alto+"px";
+document.getElementById("content").style.paddingTop="99px";
 }
 
 
@@ -52,13 +55,9 @@ $(window).resize(function(){
 obtenerAlto( "ventana", $( document ).height() );
      
 });
-     
-
- 
-
-
 });
 </script>
+
 
 
 </head>
@@ -82,18 +81,16 @@ obtenerAlto( "ventana", $( document ).height() );
  
 </div>
 
-<footer>
+  </div>
+
+ <footer>
         <div id="footerinf">
     <p>Proyecto nacido en LABICxLaPaz, Pasto Colombia 2018 </p>
 </div>
     <img class="logoin" src="{{asset ('img/logoinf.png')}}"/>
  </footer>
 
-  </div>
 
- <!--<footer>
-<img class="logoin" src="{{asset ('img/logoinf.png')}}"/>
-</footer>-->
 
    
 
