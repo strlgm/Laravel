@@ -16,3 +16,6 @@
 });
 */
 Route::get('/', 'HomeController@inicio');
+Route::get('proyecto', 'HomeController@proyecto');
+Route::get('inicio', 'HomeController@proyecto');
+
