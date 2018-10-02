@@ -7,12 +7,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>La Ventana</title>
         <link rel="stylesheet" href="{{asset('css/style.css') }}" />
+        <link rel="stylesheet" href="{{asset('css/mobile.css') }}" />
+        <link rel="stylesheet" href="{{asset('css/banner.css') }}" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>
-$(function() {
+<script src="{{ asset('js/altura.js')}}"></script>
+<script >
+    $(function() {
     var pull = $('#pull');
     menu = $('nav ul');
     menuHeight = menu.height();
@@ -29,45 +30,15 @@ $(window).resize(function(){
         menu.removeAttr('style');
     }
 });
-
-</script>
-
-<script>
-$(function () {
-function obtenerAlto( obj, alto ) {
-    if (alto<900){
-   
-            document.getElementByClassName("slider").style.height=alto+"px";
-            document.getElementById("info").style.height=alto+"px";
-            document.getElementById("content").style.height=alto+"px";
-            document.getElementById("content").style.paddingTop="99px";
-    }
-    
-    alto = alto-180;
- document.getElementById("info").style.height=alto+"px";
- document.getElementById("content").style.height=alto+"px";
-document.getElementById("content").style.paddingTop="99px";
-}
-
-
-obtenerAlto( "ventana", $( document).height() );    
-$(window).resize(function(){
-obtenerAlto( "ventana", $( document ).height() );
-     
-});
-});
-</script>
-
-
-
+    </script>
 </head>
 <body>
 
 <nav>
 <img class="logo" src="{{asset ('img/logosup.png')}}"/>
     <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Conoce el Proyecto</a></li>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="proyecto">Conoce el Proyecto</a></li>
         <li><a href="#">Mi Kit</a></li>
         <li><a href="#">Videos</a></li>
         <br clear="all" />
@@ -76,7 +47,7 @@ obtenerAlto( "ventana", $( document ).height() );
 </nav>
 <div id="content" >
 <div  id="info">
- @yield('contenido')
+@yield('contenido')
 
  
 </div>
@@ -89,11 +60,6 @@ obtenerAlto( "ventana", $( document ).height() );
 </div>
     <img class="logoin" src="{{asset ('img/logoinf.png')}}"/>
  </footer>
-
-
-
-   
-
 
 </body>
     </html>
