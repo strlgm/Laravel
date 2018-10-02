@@ -1,0 +1,84 @@
+
+@font-face {
+    font-family:"SlimJoe";
+    src:url(../font/SlimJoe.otf) format("opentype");
+}
+
+@font-face {
+    font-family:"futura";
+    font-style: normal;
+    src:url(../font/Futura.ttf) format("opentype");
+}
+
+@font-face {
+    font-family:'Bigjoe';
+    src:url(../font/BIGJOHN.otf) format("opentype");
+}
+
+@media only screen and (max-width : 700px) {
+    #content{
+        padding-top:none;
+        padding-bottom:none;
+     }
+     
+     
+	
+    nav {
+        border-bottom: 0;
+        height: auto;
+        z-index: 1;
+    }
+
+    nav ul {
+        display: none;
+        height: auto;
+        width: 100%;
+        float: none;;
+    }
+
+    nav li {
+        width: 90%;
+        float: right;
+        position: relative;
+        text-align: right;
+    }
+
+    nav a {
+        text-align: center;
+        width: 100%;
+        text-indent: 25px;
+    }
+
+    nav img{
+        display: none;
+    }
+    nav li a:hover {
+        border-top: none;
+        text-decoration: underline  #6EE2FF;
+    }
+
+    nav a#pull {
+        display: block;
+        background: #FFD83E;
+        width: 100%;
+        position: relative;
+    }
+
+    nav a#pull:after {
+        content:"";
+        background: url('../img/nav-icon.png') no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+    footer p{
+        font-size: 12px;
+        padding-right: 100px;
+         padding-top: 5%;
+    
+    
+    }
+}
