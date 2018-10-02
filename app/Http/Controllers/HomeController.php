@@ -6,9 +6,18 @@ use Illuminate\Http\Request;
  
 class HomeController extends Controller
 {
-    public function inicio(){
-        return view('principal');
+    public function getIndex(){
+        return View::make('inicio');
     }
+    public function inicio(){
+        return view('inicio');
+    }
+
+    public function proyecto(){
+        return view('proyecto');
+    }
+
+
  
  
 }
